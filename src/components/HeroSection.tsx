@@ -12,7 +12,7 @@ export default function HeroSection() {
       <div className="max-w-[600px] w-[90%] mx-auto py-[30px] z-2">
         <Link href="/">
           <Image
-            src="/portfolio.png"
+            src="/Portfolio.png"
             width={120}
             height={80}
             className="max-h-[80px] h-full object-contain object-center"
