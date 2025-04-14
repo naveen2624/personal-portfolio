@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Head from "next/head";
-import { MapPin, Phone, Mail, Clock, Send, Check } from "lucide-react";
+import { Phone, Mail, Send, Check } from "lucide-react";
 
 import { ShootingStars } from "@/components/ui/shooting-stars";
 import { StarsBackground } from "@/components/ui/stars-background";
@@ -10,13 +10,13 @@ import Link from "next/link";
 export default function ContactPage() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (validateForm()) {
+      setIsSubmitting(true);
 
-    setIsSubmitting(true);
+      // Construct the WhatsApp message
+      const { name, email, phone, message } = FormField;
 
-    // Construct the WhatsApp message
-    const { name, email, phone, message } = FormField;
-
-    const whatsappMessage = `
+      const whatsappMessage = `
       Hello! You have a new inquiry from your website:
           
       👤 Name: ${name}
@@ -25,19 +25,20 @@ export default function ContactPage() {
       🗨️ Message: ${message}
         `;
 
-    const encodedMessage = encodeURIComponent(whatsappMessage.trim());
+      const encodedMessage = encodeURIComponent(whatsappMessage.trim());
 
-    // Change the phone number to your desired WhatsApp number (with country code, no +)
-    const whatsappNumber = "919787174450"; // example number
+      // Change the phone number to your desired WhatsApp number (with country code, no +)
+      const whatsappNumber = "919787174450"; // example number
 
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
-    // Open WhatsApp in new tab
-    window.open(whatsappURL, "_blank");
+      // Open WhatsApp in new tab
+      window.open(whatsappURL, "_blank");
 
-    // You can reset the form or mark it as submitted
-    setIsSubmitted(true);
-    setIsSubmitting(false);
+      // You can reset the form or mark it as submitted
+      setIsSubmitted(true);
+      setIsSubmitting(false);
+    }
   };
 
   const [FormField, setFormState] = useState({

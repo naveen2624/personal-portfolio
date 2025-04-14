@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import React from "react";
 import { Timeline } from "@/components/ui/timeline";
 import { Cover } from "./ui/cover";

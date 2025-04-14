@@ -3,13 +3,14 @@ import Image from "next/image";
 import { Cover } from "@/components/ui/cover";
 import { ShootingStars } from "@/components/ui/shooting-stars";
 import { StarsBackground } from "@/components/ui/stars-background";
-import { FaArrowRight, FaHandPointRight } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
     <div className="w-full overflow-x-hidden min-h-screen grid lg:grid-cols-[1fr_0.6fr_0.4fr] gap-[20px] bg-black ">
       <div className="max-w-[600px] w-[90%] mx-auto py-[30px] z-2">
-        <a href="/">
+        <Link href="/">
           <Image
             src="/portfolio.png"
             width={120}
@@ -17,7 +18,7 @@ export default function HeroSection() {
             className="max-h-[80px] h-full object-contain object-center"
             alt="logo"
           />
-        </a>
+        </Link>
         <div className="flex flex-col justify-center h-[80%]">
           <span className="text-blue-600 font-[600]">Its Me</span>
           <h2 className="bg-clip-text text-transparent text-start bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-2xl md:text-4xl lg:text-7xl font-sans py-2 md:py-10 relative z-20 font-bold tracking-tight">
@@ -55,10 +56,10 @@ export default function HeroSection() {
           About Me
         </h2>
         <p className="max-w-xl mx-auto text-sm md:text-lg text-neutral-700 dark:text-neutral-300 text-start mt-[20px]">
-          Hi, I'm Naveen, a Web Developer skilled in the MERN stack, automation,
-          and backend systems. Currently upskilling in Data Science, I’m
-          exploring AI and machine learning to solve real-world challenges.
-          Always eager to learn and innovate—let’s connect! 🚀
+          Hi, I&apos;m Naveen, a Web Developer skilled in the MERN stack,
+          automation, and backend systems. Currently upskilling in Data Science,
+          I&apos;m exploring AI and machine learning to solve real-world
+          challenges. Always eager to learn and innovate—let&apos;s connect! 🚀
           <br />
         </p>
       </div>
